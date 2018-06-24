@@ -25,13 +25,21 @@ import MXSegmentedPager
 
 class MXViewController: MXSegmentedPagerController {
 
-    @IBOutlet var headerView: UIView!
-    
+	override init(controllers: [UIViewController]) {
+		super.init(controllers: controllers)
+	}
+
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentedPager.backgroundColor = .white
         
-        // Parallax Header       
+        // Parallax Header
+		let headerView = UIView()
+		headerView.backgroundColor = .purple
         segmentedPager.parallaxHeader.view = headerView
         segmentedPager.parallaxHeader.mode = .fill
         segmentedPager.parallaxHeader.height = 150
@@ -44,11 +52,6 @@ class MXViewController: MXSegmentedPagerController {
         segmentedPager.segmentedControl.selectedTitleTextAttributes = [NSForegroundColorAttributeName : UIColor.orange]
         segmentedPager.segmentedControl.selectionStyle = .fullWidthStripe
         segmentedPager.segmentedControl.selectionIndicatorColor = .orange
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func segmentedPager(_ segmentedPager: MXSegmentedPager, titleForSectionAt index: Int) -> String {

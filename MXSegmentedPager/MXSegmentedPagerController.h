@@ -41,16 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (__kindof UIViewController *)segmentedPager:(MXSegmentedPager *)segmentedPager viewControllerForPageAtIndex:(NSInteger)index;
 
-/**
- Asks the data source for a segue identifier to insert in a particular page of the segmented-pager.
- 
- @param segmentedPager A segmented-pager object requesting the view.
- @param index          An index number identifying a page in segmented-pager.
- 
- @return The segue identifier that the segmented-pager can use for the specified page.
- */
-- (NSString *)segmentedPager:(MXSegmentedPager *)segmentedPager segueIdentifierForPageAtIndex:(NSInteger)index;
-
 @end
 
 /**
@@ -61,7 +51,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Returns the segmengted-pager view managed by the controller object.
  */
-@property (nonatomic, strong, readonly) MXSegmentedPager *segmentedPager;
+
+- (instancetype)initWithControllers:(NSArray<UIViewController *> *)controllers;
+
+@property (nonatomic, readonly) MXSegmentedPager *segmentedPager;
 
 @end
 
