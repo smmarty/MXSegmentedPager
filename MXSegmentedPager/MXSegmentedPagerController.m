@@ -3,9 +3,6 @@
 
 @interface MXSegmentedPagerController ()
 
-@property (nonatomic) NSInteger pageIndex;
-@property (nonatomic) NSArray<UIViewController *> *viewControllers;
-
 @property (nonatomic) MXSegmentedPager *segmentedPager;
 
 @end

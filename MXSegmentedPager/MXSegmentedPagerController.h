@@ -54,6 +54,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithControllers:(NSArray<UIViewController *> *)controllers;
 
+@property (nonatomic) NSInteger pageIndex;
+@property (nonatomic) NSArray<UIViewController *> *viewControllers;
+
 @property (nonatomic, readonly) MXSegmentedPager *segmentedPager;
 
 @end
