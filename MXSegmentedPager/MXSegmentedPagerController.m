@@ -18,11 +18,23 @@
 
 	self.viewControllers = controllers;
 
+	for (UIViewController *vc in controllers) {
+		[self addChildViewController:vc];
+	}
+
 	return self;
 }
 
 - (void)loadView {
     self.view = self.segmentedPager;
+}
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+
+	for (UIViewController *vc in self.viewControllers) {
+		[vc didMoveToParentViewController:self];
+	}
 }
 
 // MARK: - MXSegmentedPagerControllerDataSource
