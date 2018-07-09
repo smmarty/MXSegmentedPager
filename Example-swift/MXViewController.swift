@@ -54,10 +54,10 @@ class MXViewController: MXSegmentedPagerController {
         segmentedPager.segmentedControl.selectionIndicatorColor = .orange
     }
     
-    override func segmentedPager(_ segmentedPager: MXSegmentedPager, titleForSectionAt index: Int) -> String {
-        return ["Table", "Web", "Text"][index]
-    }
-    
+//    override func segmentedPager(_ segmentedPager: MXSegmentedPager, titleForSectionAt index: Int) -> String {
+//        return ["Table", "Web", "Text"][index]
+//    }
+
     override func segmentedPager(_ segmentedPager: MXSegmentedPager, didScrollWith parallaxHeader: MXParallaxHeader) {
         print("progress \(parallaxHeader.progress)")
     }

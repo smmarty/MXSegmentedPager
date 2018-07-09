@@ -52,4 +52,8 @@
     return self.viewControllers[index];
 }
 
+- (NSString *)segmentedPager:(MXSegmentedPager *)segmentedPager titleForSectionAtIndex:(NSInteger)index {
+	return self.viewControllers[index].title ?: @"";
+}
+
 @end
