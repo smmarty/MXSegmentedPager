@@ -18,10 +18,6 @@
 
 	self.viewControllers = controllers;
 
-	for (UIViewController *vc in controllers) {
-		[self addChildViewController:vc];
-	}
-
 	return self;
 }
 
@@ -29,10 +25,11 @@
     self.view = self.segmentedPager;
 }
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
+- (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers {
+	_viewControllers = viewControllers;
 
-	for (UIViewController *vc in self.viewControllers) {
+	for (UIViewController *vc in viewControllers) {
+		[self addChildViewController:vc];
 		[vc didMoveToParentViewController:self];
 	}
 }
